@@ -10,16 +10,33 @@ bottom = 2.5
 middle = 7.2
 top = 12.0
 
-for i in range(5):
-	servo.ChangeDutyCycle(bottom)
-	time.sleep(1.0)
+def setservo(degree):
+    servo.ChangeDutyCycle(middle + (12.0-7.2)*(degree/90.0))
 
-	servo.ChangeDutyCycle(middle)
-	time.sleep(1.0)
+setservo(0)
+time.sleep(1.0)
+setservo(15)
+time.sleep(1.0)
+setservo(30)
+time.sleep(1.0)
+setservo(45)
+time.sleep(1.0)
+setservo(60)
+time.sleep(1.0)
+setservo(90)
+time.sleep(1.0)
 
-	servo.ChangeDutyCycle(top)
-	time.sleep(1.0)
-
-
-
-
+setservo(0)
+time.sleep(1.0)
+setservo(-15)
+time.sleep(1.0)
+setservo(-30)
+time.sleep(1.0)
+setservo(-45)
+time.sleep(1.0)
+setservo(-60)
+time.sleep(1.0)
+setservo(-90)
+time.sleep(1.0)
+servo.stop()
+GPIO.cleanup()
